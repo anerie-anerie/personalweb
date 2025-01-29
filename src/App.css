@@ -1,15 +1,10 @@
-/* Navbar styling */
+/* Navbar styling - still issue with right nav bar NOT staying right*/
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #333;
-}
-
-.navbar .logo {
-  color: white;
-  font-size: 1.5rem;
 }
 
 /* Left navigation */
@@ -26,61 +21,86 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   font-size: 1rem;
+  border: 2px solid white; /* Add border */
+  border-radius: 4px; /* Rounded corners */
+  margin: 0 5px; /* Space between buttons */
 }
 
 .navbar .nav-left li a:hover {
   background-color: #555;
-  border-radius: 4px;
 }
 
 /* Right navigation */
 .navbar .nav-right {
   display: flex;
-  gap: 1rem;
+  gap: 1vw;
+  margin-right: 0px;
 }
 
-.navbar .social-icons a img {
-  width: 25px;
-  height: 25px;
-  margin-left: 1rem;
+.navbar .nav-right li {
+  list-style: none;
 }
 
+.navbar .nav-right li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid white; /* Add border */
+  border-radius: 4px; /* Rounded corners */
+  margin: 0 5px; /* Space between buttons */
+}
+
+.navbar .nav-right li a:hover {
+  background-color: #555;
+}
+
+/* Hamburger styling */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
+  display: none; /* Hidden by default */
+  flex-direction: column; /* Stack the bars vertically */
+  gap: 1vh; /* Add spacing between bars */
   cursor: pointer;
+  align-items: center; /* Center the bars horizontally */
+  position: absolute; /* Allow positioning */
+  right: 10px; /* Position to the right */
+  top: 15px; /* Adjust vertical positioning */
 }
 
+/* Hamburger bars */
 .hamburger .bar {
-  width: 30px;
-  height: 4px;
-  background-color: white;
-  border-radius: 2px;
+  width: 5vw; /* Width of each bar */
+  height: 3px; /* Height of each bar */
+  background-color: pink; /* Bar color */
+  border-radius: 1px; /* Rounded edges */
 }
 
 /* Media Queries for Mobile */
-@media (max-width: 768px) {
+@media (max-width: 668px) {
+  /* Hide the navigation links by default */
   .navbar .nav-links {
-    display: block;
-    width: 100%;
-    text-align: center;
+    display: none;
     position: absolute;
-    top: 70px;
+    top: 0px;
     left: 0;
+    width: 100%;
     background-color: #333;
+    text-align: center;
+    padding: 10px;
     transition: all 0.3s ease;
-    transform: translateY(-100%);
   }
 
+  /* Show the navigation links when active */
   .navbar .nav-links.active {
-    transform: translateY(0);
+    display: block;
   }
 
+  /* Stack the left and right navigation items vertically */
   .navbar .nav-left,
   .navbar .nav-right {
     flex-direction: column;
     width: 100%;
+    margin: 0; /* Remove any extra margin */
   }
 
   .navbar .nav-left li,
@@ -88,6 +108,7 @@
     padding: 10px 0;
   }
 
+  /* Show the hamburger icon on smaller screens */
   .hamburger {
     display: flex;
   }
