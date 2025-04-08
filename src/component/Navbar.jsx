@@ -1,6 +1,10 @@
 // src/components/Navbar.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Main from "../pages/Main.jsx";
+import Skills from "../pages/Skills.jsx";
+import Projects from "../pages/Projects.jsx";
+import Connect from "../pages/Connect.jsx";
 
 import "../App.css"; // Ensure the CSS is correctly linked
 

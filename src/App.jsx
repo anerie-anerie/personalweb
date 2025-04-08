@@ -1,11 +1,11 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./component/Navbar";
-import Main from "./pages/Main";
-import Skills from "./pages/Skills";
-import Projects from "./pages/Projects";
-import Connect from "./pages/Connect";
+import Navbar from "./component/Navbar.jsx";
+import Main from "./pages/Main.jsx";
+import Skills from "./pages/Skills.jsx";
+import Projects from "./pages/Projects.jsx";
+import Connect from "./pages/Connect.jsx";
 
 function App() {
   return (
